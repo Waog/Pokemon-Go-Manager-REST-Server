@@ -3,11 +3,11 @@ var restful = require('node-restful');
 var mongoose = restful.mongoose;
 
 // Schema
-var productSchema = new mongoose.Schema({
+var trainerSchema = new mongoose.Schema({
+	googleID: String,
 	name: String,
-	sku: String,
-	price: Number
+	pokemon: String
 });
 
 // return model
-module.exports = restful.model('Products', productSchema);
+module.exports = restful.model('Trainer', trainerSchema);
