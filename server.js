@@ -4,7 +4,7 @@ let mongoose = require('mongoose');
 let bodyParser = require('body-parser');
 
 // MongoDB
-mongoose.connect('mongodb://localhost/pokemon-go-manager');
+mongoose.connect('mongodb://52.59.233.107:27017/pokemon-go-manager');
 
 // Express
 let app = express();
