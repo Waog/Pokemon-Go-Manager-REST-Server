@@ -4,9 +4,15 @@ var mongoose = restful.mongoose;
 
 // Schema
 var trainerSchema = new mongoose.Schema({
-	googleID: String,
+	googleID: Number,
 	name: String,
-	pokemon: String
+	pokemonSet: [
+      {
+      	id: Number,
+      	name: String,
+      	valueSets: [{id: Number, cp: Number, hp: Number, stardust: Number}]
+      }
+    ]
 });
 
 // return model
