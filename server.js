@@ -12,7 +12,23 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "http://localhost:81");
+
+	let allowedOrigins = [
+		'http://pokemongomanager.de',
+		'http://pokemongomanager.de:81',
+		'http://pokemongomanager.waog.net',
+		'http://pokemongomanager.waog.net:81',
+		'http://52.59.233.107',
+		'http://52.59.233.107:81',
+		'http://localhost',
+		'http://localhost:81',
+		'http://localhost:3000',
+	]
+
+	if (allowedOrigins.includes(req.headers.origin)) {
+    	res.header("Access-Control-Allow-Origin", req.headers.origin);
+	}
+
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     res.header("Access-Control-Allow-Credentials", "true");
