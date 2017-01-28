@@ -4,7 +4,8 @@ let mongoose = require('mongoose');
 let bodyParser = require('body-parser');
 
 // MongoDB
-mongoose.connect('mongodb://52.59.233.107:27017/pokemon-go-manager');
+// link the mongodb contaner with the alias host name 'mongod' before connecting
+mongoose.connect('mongodb://mongod:27017/pokemon-go-manager');
 
 // Express
 let app = express();
